@@ -2,7 +2,7 @@
 
 /**
  * check_cycle - checks if a singly linked list has a cycle in it.
- * @list - the linked list to check
+ * @list: the linked list to check
  * Return: 0 no; 1 yes
  */
 
