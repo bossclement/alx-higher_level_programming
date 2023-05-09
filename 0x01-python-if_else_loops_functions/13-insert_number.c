@@ -6,12 +6,12 @@ listint_t *insert_node(listint_t **head, int number)
 	listint_t *new = malloc(sizeof(listint_t)), *head_cp = *head,
 	*prev;
 
-	if (head == NULL || new == NULL)
+	if (new == NULL)
 		return (NULL);
 
 	new->n = number;
 	new->next = NULL;
-	if (*head == NULL)
+	if (head == NULL || *head == NULL)
 	{
 		*head = new;
 		return (new);
