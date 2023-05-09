@@ -8,7 +8,5 @@ def fizzbuzz():
             result = "Fizz"
         elif i % 5 == 0:
             result = "Buzz"
-        if i <= 99:
-            result += " "
-        print(result, end="")
+        print(result, end=" ")
     print("\n", end="")
