@@ -3,12 +3,12 @@ def fizzbuzz():
 	for i in range(1, 101):
 	    result = str(i)
 	    if i % 3 == 0:
-		result = "Fizz"
+		    result = "Fizz"
 	    elif i % 5 == 0:
-		result = "Buzz"
+		    result = "Buzz"
 	    elif i % 3 == 0 and i % 5 == 0:
-		result = "FizzBuzz"
+		    result = "FizzBuzz"
 	    if i < 99:
-		result += " "
+		    result += " "
 	    print(result, end="")
 print("\n", end ="")
