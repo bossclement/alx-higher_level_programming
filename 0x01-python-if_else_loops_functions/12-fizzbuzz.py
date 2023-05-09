@@ -12,4 +12,3 @@ def fizzbuzz():
             result += " "
             print(result, end="")
     print("\n", end="")
-fizzbuzz()
