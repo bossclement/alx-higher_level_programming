@@ -5,4 +5,5 @@ for i in range(100):
         dt = "0" + dt
     if i < 99:
         dt += ", "
-    print("{0}".format(dt)
+    print("{0}".format(dt), end="")
+print('\n', end = "")
