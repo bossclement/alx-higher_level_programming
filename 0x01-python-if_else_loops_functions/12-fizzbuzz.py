@@ -9,4 +9,3 @@ def fizzbuzz():
         elif i % 5 == 0:
             result = "Buzz"
         print(result, end=" ")
-    print("\n", end="")
