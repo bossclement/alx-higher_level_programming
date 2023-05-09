@@ -6,4 +6,4 @@ for i in range(100):
     if i < 99:
         dt += ", "
     print("{0}".format(dt), end="")
-print('\n', end = "")
+print('\n', end="")
