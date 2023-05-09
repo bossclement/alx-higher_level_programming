@@ -9,5 +9,5 @@ for i in range(1, 101):
         result = "FizzBuzz"
     if i < 99:
         result += " "
-    print(result, end=" ")
+    print(result, end="")
 print("\n", end ="")
