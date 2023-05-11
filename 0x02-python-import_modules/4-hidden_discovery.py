@@ -1,10 +1,13 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-    with open("hidden_4.pyc", "rb") as file:
-        binary = file.read()
-        file.close()
+import imp
+import sys
 
-    names = dir(binary)
-    for name in names:
-        if name[:2] != "__":
-            print(name)
+# Load the compiled module
+module = imp.load_compiled("hidden_4", "hidden_4.pyc")
+
+# Get all the names defined in the module
+names = [name for name in dir(module) if not name.startswith("__")]
+
+# Sort the names alphabetically and print them
+for name in sorted(names):
+    print(name)
