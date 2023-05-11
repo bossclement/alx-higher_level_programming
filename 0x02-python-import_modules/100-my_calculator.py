@@ -12,13 +12,13 @@ if __name__ == "__main__":
     argv[3] = int(argv[3])
     match argv[2]:
         case "+":
-            print("{} + {} = {}".format(add(argv[1], argv[3])))
+            print("{} + {} = {}".format(argv[1], argv[3], add(argv[1], argv[3])))
         case "-":
-            print("{} - {} = {}".format(sub(argv[1], argv[3])))
+            print("{} - {} = {}".format(argv[1], argv[3], sub(argv[1], argv[3])))
         case "*":
-            print("{} * {} = {}".format(mul(argv[1], argv[3])))
+            print("{} * {} = {}".format(argv[1], argv[3], mul(argv[1], argv[3])))
         case "/":
-            print("{} / {} = {}".format(div(argv[1], argv[3])))
+            print("{} / {} = {}".format(argv[1], argv[3], div(argv[1], argv[3])))
         case _:
             print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
