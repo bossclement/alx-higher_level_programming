@@ -2,6 +2,6 @@
 def print_list_integer(my_list=[]):
     if not my_list:
         return
-    print("{}".format(my_list[0]))
+    print("{:d}".format(my_list[0]))
     my_list.pop(0)
     print_list_integer(my_list)
