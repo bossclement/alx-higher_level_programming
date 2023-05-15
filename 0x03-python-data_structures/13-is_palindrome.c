@@ -31,7 +31,7 @@ int is_palindrome(listint_t **head)
 	listint_t *reversed, *head_cp = *head;
 
 	if (*head == NULL)
-		return (0);
+		return (1);
 
 	reversed = reverse_list(*head);
 	while (reversed != NULL && head_cp != NULL)
