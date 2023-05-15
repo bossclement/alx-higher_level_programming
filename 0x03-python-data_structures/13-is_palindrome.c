@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdio.h>
 
 /**
  * reverse_list - reverse linked list
@@ -9,7 +8,7 @@
 listint_t *reverse_list(listint_t *head)
 {
 	listint_t *prev = NULL, *cur = head, *next;
-	
+
 	while (cur != NULL)
 	{
 		next = cur->next;
@@ -20,6 +19,7 @@ listint_t *reverse_list(listint_t *head)
 	return (prev);
 }
 
+
 /**
  * is_palindrome - check if is palindrome
  * @head: starting point of the linked list
@@ -29,17 +29,26 @@ listint_t *reverse_list(listint_t *head)
 int is_palindrome(listint_t **head)
 {
 	listint_t *reversed, *head_cp = *head;
+	int nums[10000], index = 0;
 
-	if (*head == NULL || (*head)->next == NULL)
+	if (*head == NULL)
 		return (1);
 
-	reversed = reverse_list(*head);
-	while (reversed != NULL && head_cp != NULL)
+	while (head_cp != NULL)
 	{
-		if (reversed->n != head_cp->n)
+		nums[index] = head_cp->n;
+		index++;
+		head_cp = head_cp->next;
+	}
+
+	reversed = reverse_list(*head);
+	index = 0;
+	while (reversed != NULL)
+	{
+		if (reversed->n != nums[index])
 			return (0);
 		reversed = reversed->next;
-		head_cp = head_cp->next;
+		index++;
 	}
 	return (1);
 }
