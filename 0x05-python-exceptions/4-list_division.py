@@ -2,17 +2,19 @@
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
     result = 0
-    length = max([len(my_list_1), len(my_list_2)])
 
-    for i in range(length):
+    for i in range(len(my_list_1)):
         result = 0
         try:
             result = my_list_1[i] / my_list_2[i]
         except TypeError:
+            result = 0
             print("wrong type")
         except ZeroDivisionError:
+            result = 0
             print("division by 0")
         except IndexError:
+            result = 0
             print("out of range")
             break
         finally:
