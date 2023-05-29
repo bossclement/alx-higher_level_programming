@@ -7,7 +7,7 @@ def magic_calculation(a, b):
             if i > a:
                 raise ValueError("i is greater than a")
             result += (a // i) + (b ** i)
-        except:
+        except Exception as e:
             result = b + a
             break
     return result
