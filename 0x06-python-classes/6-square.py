@@ -40,11 +40,13 @@ class Square:
 
     def my_print(self):
         """Prints my square"""
-        spacer = "" if self.__position[1] < 0 else (" " * self.__position[0])
-        if self.__size == 0:
-            print()
-        for _ in range(self.__size):
-            print("{}{}".format(spacer, ("#" * self.__size)))
+        for i in range(0, self.__position[1]):
+            print("")
+        for i in range(0, self.__size):
+            for j in range(0, self.__position[0]):
+                print("", end="")
+            for k in range(0, self.__size):
+                print("#", end="")
 
     @property
     def position(self):
