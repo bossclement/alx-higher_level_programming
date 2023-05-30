@@ -14,6 +14,13 @@ class Square:
                 a square.
             position (tuple): coordinates of the square
         """
+        if (not position or len(position) != 2) or \
+                (type(position[0]) != int or type(position[1]) != int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
         self.size = size
         self.position = position
 
