@@ -40,7 +40,7 @@ class Square:
 
     def my_print(self):
         """Prints my square"""
-        s = "" if self.__position[1] < 0 else (" " * self.__position[0])
+        s = "" if self.__position[1] > 0 else (" " * self.__position[0])
         if self.__size == 0:
             print()
         for _ in range(self.__size):
@@ -48,6 +48,8 @@ class Square:
                 print("{}{}".format(s, ("#" * self.__size)))
             else:
                 print("#" * self.__size)
+        if self.__size == 1:
+            print("#")
 
     @property
     def position(self):
