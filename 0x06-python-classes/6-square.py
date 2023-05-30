@@ -14,13 +14,6 @@ class Square:
                 a square.
             position (tuple): coordinates of the square
         """
-        if (not position or len(position) != 2) or \
-                (type(position[0]) != int or type(position[1]) != int):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        if type(size) != int:
-            raise TypeError("size must be an integer")
-        elif size < 0:
-            raise ValueError("size must be >= 0")
         self.size = size
         self.position = position
 
@@ -33,12 +26,19 @@ class Square:
 
     @property
     def size(self):
-        """Retrives the value of size"""
+        """Retrives the value of size
+        Returns:
+            int: size of the square
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Sets the value of size"""
+        """Sets the value of size
+        Raises:
+            TypeError: when value is not integer
+            ValueError: when value is >= 0
+        """
         if type(value) != int:
             raise TypeError("size must be an integer")
         elif value < 0:
@@ -71,6 +71,7 @@ class Square:
                 integers in it
         """
         if (not value or len(value) != 2) or \
-                (type(value[0]) != int or type(value[1]) != int):
+                (type(value[0]) != int or type(value[1]) != int) or \
+                (value[0] < 0 or value[1] < 0):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
