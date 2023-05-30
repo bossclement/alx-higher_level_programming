@@ -7,6 +7,6 @@ This is documantion for this module
 
 class Square:
     """This is my class documantation"""
-    def __init__():
+    def __init__(size):
         """This is a constructor function"""
-        self.__size = 3
+        self.__size = size
