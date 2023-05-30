@@ -66,7 +66,6 @@ class SinglyLinkedList:
 
         if self.head is None or self.head.data > new.data:
             self.head = new
-        print(value)
 
     def __str__(self):
         data = ""
@@ -74,4 +73,4 @@ class SinglyLinkedList:
         while cp:
             data += "{:d}\n".format(cp.data)
             cp = cp.next_node
-        return data
+        return data[:-1]
