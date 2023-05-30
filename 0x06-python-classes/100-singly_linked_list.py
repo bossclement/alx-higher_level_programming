@@ -23,6 +23,8 @@ class Node:
     @data.setter
     def data(self, value):
         """Sets the value of data"""
+        if type(value) != int:
+            raise TypeError("data must be an integer")
         self.__data = value
 
     @property
@@ -48,8 +50,6 @@ class SinglyLinkedList:
         self.head = None
 
     def sorted_insert(self, value):
-        if type(value) != int:
-            raise TypeError("data must be an integer")
         new = Node(value)
         cp = self.head
         prev = None
