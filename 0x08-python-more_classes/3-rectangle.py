@@ -87,4 +87,5 @@ class Rectangle:
             return string
         for _ in range(self.__height):
             string += ("#" * self.__width)
+            string += "\n"
         return string
