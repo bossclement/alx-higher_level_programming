@@ -51,7 +51,6 @@ def solve_nqueens(N):
 
     for solution in solutions:
         print(solution)
-    print()
 
 
 if __name__ == '__main__':
