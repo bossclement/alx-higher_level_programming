@@ -1,5 +1,7 @@
 import sys
 
+"""Docs for my module"""
+
 
 def is_safe(board, row, col):
     # Check if it is safe to place a queen at board[row][col]
