@@ -118,6 +118,4 @@ class Rectangle:
         Returns:
             (Rectangle): the new rectangle instance.
         """
-        cls.width = size
-        cls.height = size
-        return Rectangle(cls.width, cls.height)
+        return cls(size, size)
