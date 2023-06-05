@@ -96,6 +96,7 @@ class Rectangle:
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """checks the biggest rectangle based on the area
         Returns:
@@ -108,9 +109,7 @@ class Rectangle:
 
         if rect_1.area() == rect_2.area():
             return rect_1
-
         elif rect_1.area() > rect_2.area():
             return rect_1
-
         else:
             return rect_2
