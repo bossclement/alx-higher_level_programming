@@ -71,13 +71,18 @@ class Rectangle:
         return (self.__width + self.__height) * 2
 
     def __repr__(self):
-        """Official string represantation of my class"""
+        """Official string represantation of my class
+        Returns:
+            (str): The string represantation.
+        """
         module = __file__.split("/")[-1][:-3]
         class_name = self.__class__.__name__
         return f"<{module}.{class_name} object at {hex(id(self))}>"
 
     def __str__(self):
         string = ""
+        if not self.__width or not self.__height:
+            return string
         for _ in range(self.__height):
             string += ("#" * self.__width)
         return string
