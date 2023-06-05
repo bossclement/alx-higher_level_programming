@@ -77,6 +77,8 @@ class Rectangle:
         """
         module = __file__.split("/")[-1][:-3]
         class_name = self.__class__.__name__
+        if not self.__width or not self.__height:
+            return ""
         return f"<{module}.{class_name} object at {hex(id(self))}>"
 
     def __str__(self):
