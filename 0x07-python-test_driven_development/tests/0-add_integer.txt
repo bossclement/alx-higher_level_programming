@@ -1,0 +1,26 @@
+"""
+>>> add_integer = __import__('0-add_integer').add_integer
+>>> add_integer(-1, -2)
+-3
+>>> add_integer(10.1, 4.1)
+14
+>>> add_integer(float(-20), float("a"))
+Traceback (most recent call last):
+ValueError: could not convert string to float: 'a'
+>>> add_integer(-200, 10j)
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> add_integer(-200, "A")
+Traceback (most recent call last):
+TypeError: b must be an integer
+>>> add_integer("a", 10)
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer("a", "a")
+Traceback (most recent call last):
+TypeError: a must be an integer
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+"""
