@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
 In this module there's a function "print_square",
 This function prints a square using the '#' character
