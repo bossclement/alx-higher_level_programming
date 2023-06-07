@@ -7,7 +7,11 @@ integer and hen the function returns their sum.
 
 
 def add_integer(a, b=98):
-    """Returns:
+    """Adds 2 numbers.
+    Args:
+        a (int): first number.
+        b (int): second number.
+    Returns:
         int: The sum of the 2 numbers.
     """
 
