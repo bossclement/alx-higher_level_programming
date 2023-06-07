@@ -7,7 +7,10 @@ of the width of the square.
 
 
 def print_square(size):
-    """Returns:
+    """This function prints a square
+    Args:
+        size (int): The size of the square.
+    Returns:
         None
     """
     if not isinstance(size, int):
