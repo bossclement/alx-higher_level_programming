@@ -1,25 +1,26 @@
 """
->>> BaseGeometry = __import__('7-base_geometry').BaseGeometry()
->>> BaseGeometry.integer_validator()
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> base_geometry = BaseGeometry()
+>>> base_geometry.integer_validator()
 Traceback (most recent call last):
 TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> BaseGeometry.integer_validator(None, None)
+>>> base_geometry.integer_validator(None, None)
 Traceback (most recent call last):
 TypeError: None must be an integer
 
->>> BaseGeometry.integer_validator("None", "None")
+>>> base_geometry.integer_validator("None", "None")
 Traceback (most recent call last):
 TypeError: None must be an integer
 
->>> BaseGeometry.integer_validator("None", -4)
+>>> base_geometry.integer_validator("None", -4)
 Traceback (most recent call last):
 ValueError: None must be greater than 0
 
->>> BaseGeometry.integer_validator("None", float("inf"))
+>>> base_geometry.integer_validator("None", float("inf"))
 Traceback (most recent call last):
 TypeError: None must be an integer
 
->>> BaseGeometry.integer_validator("my_int", 12)
+>>> base_geometry.integer_validator("my_int", 12)
 
 """
