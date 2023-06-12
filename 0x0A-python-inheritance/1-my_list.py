@@ -11,4 +11,5 @@ class MyList(list):
                                 replace("]", "").strip(),
                                 self.__str__().split(',')) if x.isnumeric()
         ]
+        i.sort()
         print(i)
