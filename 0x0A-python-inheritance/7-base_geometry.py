@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Docs for my module goes here"""
 
 
@@ -8,7 +9,8 @@ class BaseGeometry:
     def area(self):
         """
         Calculate the area.
-        Raises an exception indicating that the area() method is not implemented.
+        Raises an exception indicating that the area() method
+        is not implemented.
         """
 
         raise Exception("area() is not implemented")
