@@ -23,4 +23,9 @@ TypeError: '<' not supported between instances of 'NoneType' and 'int'
 Traceback (most recent call last):
 TypeError: '<' not supported between instances of 'int' and 'str'
 
+>>> my_list.append(float("inf"))
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+TypeError: '<' not supported between instances of 'int' and 'str'
+
 """
