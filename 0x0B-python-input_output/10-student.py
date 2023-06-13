@@ -11,6 +11,12 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    def to_json(self):
+    def to_json(self, attrs=None):
         """Retrieves attributes of student."""
-        return self.__dict__
+        attributes = self.__dict__
+        result = {}
+        if attrs:
+            for attr in attrs:
+                if attr in attributes:
+                    result.update({attr: attributes[attr]})
+        return result
