@@ -11,6 +11,6 @@ def save_to_json_file(my_obj, filename):
     :param filename: File name where to save the object.
     """
 
-    with open(filename, mode="a+", encoding="utf-8") as f:
+    with open(filename, mode="w+", encoding="utf-8") as f:
         json.dump(my_obj, f)
     f.close()
