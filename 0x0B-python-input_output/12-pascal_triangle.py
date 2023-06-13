@@ -6,7 +6,7 @@ def pascal_triangle(n):
     """Creates a pascal triangle.
     Args:
         n (int): Length of the triangle.
-    
+
     Returns:
         list: list containing lists of pascal triangle.
     """
