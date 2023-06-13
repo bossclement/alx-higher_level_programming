@@ -19,4 +19,5 @@ class Student:
             for attr in attrs:
                 if attr in attributes:
                     result.update({attr: attributes[attr]})
-        return result if result else attributes
+            return result
+        return attributes
