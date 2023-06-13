@@ -27,7 +27,6 @@ def process_input():
         for line in sys.stdin:
             line = line.strip()
             if line:
-                # Parse the line and extract relevant information
                 parts = line.split()
                 file_size = int(parts[-1])
                 status_code = parts[-2]
@@ -36,7 +35,6 @@ def process_input():
 
                 line_count += 1
 
-                # Print statistics every 10 lines
                 if line_count % 10 == 0:
                     print_statistics(file_sizes, status_codes)
 
