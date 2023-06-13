@@ -6,5 +6,5 @@ import json
 
 
 def to_json_string(my_obj):
-    """Changes a string to a python dictionary."""
+    """Changes a python dictionary to a string."""
     return json.dumps(my_obj)
