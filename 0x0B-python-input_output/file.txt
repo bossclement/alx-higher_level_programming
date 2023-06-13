@@ -7,3 +7,4 @@ But it can be very hard if:
 "C is fun!"
 "C is fun!"
 - You don't have strong C knowledge.
+
