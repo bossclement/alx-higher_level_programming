@@ -4,6 +4,7 @@
 
 import json
 
+
 def save_to_json_file(my_obj, filename):
     """Saves an object to a file.
     :param my_obj: Python object (dict).
