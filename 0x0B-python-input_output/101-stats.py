@@ -3,43 +3,31 @@
 
 
 import sys
-from collections import defaultdict
 
 
-def print_statistics(file_sizes, status_codes):
-    """Prints the statistics on stdout"""
-    total_size = sum(file_sizes)
-    print(f"File size: {total_size}")
+total_size = 0
+status_counts = {}
 
-    sorted_status_codes = sorted(status_codes.keys())
-    for code in sorted_status_codes:
-        count = status_codes[code]
-        print(f"{code}: {count}")
+try:
+    for i, line in enumerate(sys.stdin, start=1):
+        fields = line.split()
 
+        file_size = int(fields[-1])
+        status_code = int(fields[-2])
 
-def process_input():
-    """Processes the user input"""
-    file_sizes = []
-    status_codes = defaultdict(int)
-    line_count = 0
+        total_size += file_size
 
-    try:
-        for line in sys.stdin:
-            line = line.strip()
-            if line:
-                parts = line.split()
-                file_size = int(parts[-1])
-                status_code = parts[-2]
-                file_sizes.append(file_size)
-                status_codes[status_code] += 1
+        if status_code in status_counts:
+            status_counts[status_code] += 1
+        else:
+            status_counts[status_code] = 1
 
-                line_count += 1
+        if i % 10 == 0:
+            print("File size: {}".format(total_size))
+            for code in sorted(status_counts.keys()):
+                print("{}: {}".format(code, status_counts[code]))
 
-                if line_count % 10 == 0:
-                    print_statistics(file_sizes, status_codes)
-
-    except KeyboardInterrupt:
-        print_statistics(file_sizes, status_codes)
-
-
-process_input()
+except KeyboardInterrupt:
+    print("File size: {}".format(total_size))
+    for code in sorted(status_counts.keys()):
+        print("{}: {}".format(code, status_counts[code]))
