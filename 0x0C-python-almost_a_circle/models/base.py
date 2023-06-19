@@ -28,4 +28,5 @@ class Base:
         """Writes a json string to a file."""
         with open("{}.json".format(cls.__name__),
                   mode="w+", encoding="utf-8") as f:
-            f.write(cls.to_json_string(list(map(lambda x: x.to_dictionary(), list_objs))))
+            f.write(cls.to_json_string(
+                list(map(lambda x: x.to_dictionary(), list_objs))))
