@@ -44,3 +44,8 @@ class Square(Rectangle):
         not_assigned = set(list(kwargs.keys())).difference(set(assigned))
         for attr in not_assigned:
             setattr(self, attr, kwargs[attr])
+
+    def to_dictionary(self):
+        """Returns certain attributes of my class."""
+        return {'x': self.x, 'y': self.y, 'id': self.id,
+                'size': self.width}
