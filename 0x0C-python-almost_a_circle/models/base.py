@@ -18,6 +18,6 @@ class Base:
 
     def to_json_string(list_dictionaries):
         """returns json string"""
-        if not list_dictionaries:
-            return '"[]"'
+        if not list_dictionaries or not isinstance(list_dictionaries, list):
+            return "[]"
         return json.dumps(list_dictionaries)
