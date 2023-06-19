@@ -50,10 +50,6 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Sets the value of y"""
-        if type(value) is not int:
-            raise TypeError("Value is not an intiger")
-        elif value <= 0:
-            raise ValueError("Value is <= 0")
         self.__y = value
 
     @property
@@ -64,8 +60,4 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Sets the value of x"""
-        if type(value) is not int:
-            raise TypeError("Value is not an intiger")
-        elif value <= 0:
-            raise ValueError("Value is <= 0")
         self.__x = value
