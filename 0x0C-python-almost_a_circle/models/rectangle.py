@@ -90,10 +90,16 @@ class Rectangle(Base):
                                                        self.__y, self.__width,
                                                        self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates attributes of my class."""
         attributes = ["id", "width", "height", "x", "y"]
+        assigned = []
         for index, arg in enumerate(args):
             if index >= len(attributes):
                 break
+            assigned.append(attributes[index])
             setattr(self, attributes[index], arg)
+
+        not_assigned = set(list(kwargs.keys())).difference(set(assigned))
+        for attr in not_assigned:
+            setattr(self, attr, kwargs[attr])
