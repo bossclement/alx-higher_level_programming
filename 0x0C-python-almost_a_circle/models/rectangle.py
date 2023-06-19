@@ -41,3 +41,31 @@ class Rectangle(Base):
         elif value <= 0:
             raise ValueError("Value is <= 0")
         self.__height = value
+
+    @property
+    def y(self):
+        """Retrieves the value of y."""
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        """Sets the value of y"""
+        if type(value) is not int:
+            raise TypeError("Value is not an intiger")
+        elif value <= 0:
+            raise ValueError("Value is <= 0")
+        self.__y = value
+
+    @property
+    def x(self):
+        """Retrieves the value of x."""
+        return self.__x
+
+    @x.setter
+    def x(self, value):
+        """Sets the value of x"""
+        if type(value) is not int:
+            raise TypeError("Value is not an intiger")
+        elif value <= 0:
+            raise ValueError("Value is <= 0")
+        self.__x = value
