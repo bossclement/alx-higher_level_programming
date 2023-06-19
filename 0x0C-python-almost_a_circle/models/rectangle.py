@@ -9,10 +9,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Constructor that initializes my attributes."""
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
@@ -72,23 +72,23 @@ class Rectangle(Base):
 
     def area(self):
         """Gets the area of the rectangle."""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """Displays the rectangle."""
-        for _ in range(self.__y):
+        for _ in range(self.y):
             print("")
-        for _ in range(self.__height):
-            for _ in range(self.__x):
+        for _ in range(self.height):
+            for _ in range(self.x):
                 print(" ", end="")
-            for w in range(self.__width):
-                print("#", end="" if w + 1 < self.__width else '\n')
+            for w in range(self.width):
+                print("#", end="" if w + 1 < self.width else '\n')
 
     def __str__(self):
         """Returns str represantation of my class"""
-        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
-                                                       self.__y, self.__width,
-                                                       self.__height)
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                                                       self.y, self.width,
+                                                       self.height)
 
     def update(self, *args, **kwargs):
         """Updates attributes of my class."""
