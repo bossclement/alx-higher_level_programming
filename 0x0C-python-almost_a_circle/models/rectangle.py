@@ -90,9 +90,7 @@ class Rectangle(Base):
                                                        self.__height)
 
     def update(self, *args):
-        attributes = ["id", "width", "height",
-                    "x", "y"
-                    ]
+        attributes = ["id", "width", "height", "x", "y"]
         for index, arg in enumerate(args):
             if index >= len(attributes):
                 break
