@@ -111,7 +111,8 @@ class Rectangle(Base):
 
     def to_csv_row(self):
         """Converts class object to csv file."""
-        return f"{self.id if type(self.id) == int else ''},{self.width},{self.height},{self.x},{self.y}"
+        id = self.id if type(self.id) == int else ''
+        return f"{id},{self.width},{self.height},{self.x},{self.y}"
 
     @classmethod
     def from_csv_row(cls, row):
