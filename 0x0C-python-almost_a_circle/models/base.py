@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Will have the base class for other classes for my project"""
 import json
+import csv
 
 
 class Base:
@@ -64,6 +65,36 @@ class Base:
                 data = cls.from_json_string(json_data)
 
                 instances = [cls.create(**d) for d in data]
+                return instances
+        except FileNotFoundError:
+            return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save my list objects to a csv file."""
+        filename = cls.__name__ + ".csv"
+        with open(filename, 'w', newline='') as file:
+            writer = csv.writer(file)
+
+            for obj in list_objs:
+                row = obj.to_csv_row()
+                writer.writerow(row)
+
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Loads my object instances from a csv file."""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, 'r', newline='') as file:
+                reader = csv.reader(file)
+                instances = []
+
+                for row in reader:
+                    obj = cls.from_csv_row(row)
+                    if obj:
+                        instances.append(obj)
+
                 return instances
         except FileNotFoundError:
             return []

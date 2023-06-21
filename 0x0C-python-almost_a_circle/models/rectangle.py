@@ -108,3 +108,18 @@ class Rectangle(Base):
         """Returns certain attributes of my class."""
         return {'x': self.x, 'y': self.y, 'id': self.id,
                 'height': self.height, 'width': self.width}
+
+    def to_csv_row(self):
+        """Converts class object to csv file."""
+        return "{},{},{},{},{}".format(
+            self.id, self.width, self.height, self.x, self.y)
+
+    @classmethod
+    def from_csv_row(cls, row):
+        """Cinverts a csv row to a python object"""
+        while ',' in row:
+            row.remove(",")
+        data = row
+        return cls(
+            int(data[1]), int(data[2]), int(data[3]), int(data[4]),
+            int(data[0] if data[0] else None))
