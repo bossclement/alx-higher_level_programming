@@ -111,16 +111,10 @@ class Rectangle(Base):
 
     def to_csv_row(self):
         """Converts class object to csv file."""
-        result = ''
-        for value in [self.id, self.width, self.height, self.x, self.y]:
-            value = value if type(value) == int else ''
-            result += "{},".format(value)
-        return result[:-1]
+        return f"{self.id if type(self.id) == int else ''},{self.width},{self.height},{self.x},{self.y}"
 
     @classmethod
     def from_csv_row(cls, row):
         """Cinverts a csv row to a python object"""
-        while ',' in row:
-            row.remove(",")
         data = list(map(lambda x: int(x) if x.isnumeric() else None, row))
         return cls(data[1], data[2], data[3], data[4], data[0])
