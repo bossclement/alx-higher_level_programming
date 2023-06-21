@@ -100,7 +100,7 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """A static method that opens a window and draws all the instances"""
+        """This will draw all the instances passed in it."""
 
         t = turtle.Turtle()
         t.color("beige")
@@ -113,21 +113,21 @@ class Base:
             t.setpos(0, 0)
             turtle.Screen().colormode(255)
             t.pencolor((randrange(255), randrange(255), randrange(255)))
-            Base.draw_rect(t, i)
+            Base.draw_shape(t, i)
             time.sleep(1)
         time.sleep(5)
 
     @staticmethod
-    def draw_rect(t, rect):
+    def draw_shape(t, obj):
         """Draws a rectangle or a square"""
 
         t.penup()
-        t.setpos(rect.x, rect.y)
+        t.setpos(obj.x, obj.y)
         t.pendown()
-        t.forward(rect.width)
+        t.forward(obj.width)
         t.left(90)
-        t.forward(rect.height)
+        t.forward(obj.height)
         t.left(90)
-        t.forward(rect.width)
+        t.forward(obj.width)
         t.left(90)
-        t.forward(rect.height)
+        t.forward(obj.height)
