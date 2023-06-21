@@ -117,9 +117,15 @@ class Rectangle(Base):
     @classmethod
     def from_csv_row(cls, row):
         """Cinverts a csv row to a python object"""
+        print(row)
         while ',' in row:
             row.remove(",")
         data = row
+        # def __init__(self, width, height, x=0, y=0, id=None):
+        # return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+        #                                                self.y, self.width,
+        #                                                self.height)
+        input(data)
         return cls(
             int(data[1]), int(data[2]), int(data[3]), int(data[4]),
             int(data[0] if data[0] else None))
