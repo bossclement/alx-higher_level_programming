@@ -78,7 +78,6 @@ class Base:
                 row = obj.to_csv_row()
                 file.write(row + '\n')
 
-
     @classmethod
     def load_from_file_csv(cls):
         """Loads my object instances from a csv file."""
