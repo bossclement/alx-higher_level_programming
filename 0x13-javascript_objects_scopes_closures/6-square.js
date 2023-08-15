@@ -1,12 +1,8 @@
 #!/usr/bin/nodejs
 
-const Rectangle = require('./4-rectangle.js');
+const Parent = require('./5-square');
 
-class Square extends Rectangle {
-  constructor (size) {
-    super(size, size);
-  }
-
+class Square extends Parent {
   charPrint (c) {
     if (c === undefined) {
       c = 'X';
