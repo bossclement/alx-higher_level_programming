@@ -1,13 +1,27 @@
 #!/usr/bin/node
-function secondBiggest (args) {
-  if (args.length <= 2) {
-    return 0;
+if (!process.argv[3]) {
+  console.log(0);
+} else {
+  const a = process.argv;
+  let highest = parseInt(a[2]);
+  let second = parseInt(a[3]);
+  if (second > highest) {
+    highest = second;
+    second = parseInt(a[2]);
   }
-
-  const sortedArgs = args.map(Number).sort((a, b) => b - a);
-  return sortedArgs[1];
+  let i = 3;
+  while (parseInt(a[i])) {
+    if (parseInt(a[i]) > highest) {
+      highest = parseInt(a[i]);
+    }
+    i++;
+  }
+  i = 3;
+  while (parseInt(a[i])) {
+    if (second < parseInt(a[i]) && parseInt(a[i]) < highest) {
+      second = parseInt(a[i]);
+    }
+    i++;
+  }
+  console.log(second);
 }
-
-const args = process.argv.slice(2);
-
-console.log(secondBiggest(args));
