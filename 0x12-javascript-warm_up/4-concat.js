@@ -1,5 +1,12 @@
 #!/usr/bin/nodejs
-const arg1 = process.argv[2];
-const arg2 = process.argv[3];
-
-console.log(`${arg1} is ${arg2}`);
+let words;
+if (process.argv[1]) {
+  words = 'undefined' + ' is undefined';
+}
+if (process.argv[2]) {
+  words = process.argv[2] + ' is undefined';
+}
+if (process.argv[3]) {
+  words = process.argv[2] + ' is ' + process.argv[3];
+}
+console.log(words);
