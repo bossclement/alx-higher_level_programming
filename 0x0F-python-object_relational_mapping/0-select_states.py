@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""filters states from a table of a user in a database"""
+"""filters states from a table of a user in a database by id"""
 
 import sys
 import MySQLdb
