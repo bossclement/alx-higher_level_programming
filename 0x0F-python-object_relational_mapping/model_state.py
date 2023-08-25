@@ -4,10 +4,8 @@
 Module contains state class which defines the schema of
 states table of my database
 """
-
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
 
 Base = declarative_base()
 
