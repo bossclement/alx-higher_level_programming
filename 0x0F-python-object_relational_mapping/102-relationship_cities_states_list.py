@@ -1,7 +1,7 @@
+#!/usr/bin/python3
 """
 Lists all City objects from the database hbtn_0e_101_usa
 """
-
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
