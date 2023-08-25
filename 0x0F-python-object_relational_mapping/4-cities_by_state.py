@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """
-fetchs all rows by matching column with a specific value
-and prevents sql injection
+fetchs all table rows that are related
 """
 
 import sys
