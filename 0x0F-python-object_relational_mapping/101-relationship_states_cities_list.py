@@ -1,23 +1,27 @@
 #!/usr/bin/python3
-
 """
-Module contains city class which defines the schema of
-cities table of my database
+Lists all State objects, and corresponding City objects,
+contained in the database hbtn_0e_101_usa
 """
-from sqlalchemy import Column, Integer, String, ForeignKey
-from model_state import Base, State
+import sys
+from relationship_state import Base, State
+from relationship_city import City
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 
 
-class City(Base):
-    """
-    class that defines schema of cities table.
-    Attributes:
-        id (int): id of the city
-        name (str): city name
-        __tablename__ (str): name of the table in database
-    """
-    __tablename__ = 'cities'
+if __name__ == '__main__':
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.
+                           format(sys.argv[1], sys.argv[2], sys.argv[3]),
+                           pool_pre_ping=True)
+    Base.metadata.create_all(engine)
 
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    st = session.query(State).outerjoin(City).order_by(State.id, City.id).all()
+
+    for state in st:
+        print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("    {}: {}".format(city.id, city.name))
