@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Prints states that contains letter a 
+Prints states that contains letter a
 """
 
 from model_state import State, Base
