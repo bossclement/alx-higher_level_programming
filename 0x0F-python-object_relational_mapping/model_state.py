@@ -1,8 +1,7 @@
 #!/usr/bin/python3
+
 """
-Module contains state class
-which defines the schema of states table
-of my database
+Module contains state class which defines the schema of states table of my database
 """
 
 from sqlalchemy import Column, Integer, String
