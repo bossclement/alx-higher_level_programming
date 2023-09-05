@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Displays your GitHub id using Basic Authentication with a personal access token.
+Displays your GitHub id using Basic
+Authentication with a personal access token.
 """
 
 import requests
