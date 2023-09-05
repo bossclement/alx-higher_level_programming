@@ -12,7 +12,7 @@ def find_peak(list_of_integers):
         list_of_integers (list): List of integers.
 
     Returns:
-        int or None: The peak element in the list, or None if the list is empty.
+        int or None: The peak element in the list.
     """
     size = len(list_of_integers)
     mid_e = size
