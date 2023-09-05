@@ -13,4 +13,3 @@ if len(sys.argv) == 2:
         headers = response.info()
         x_request_id = headers.get('X-Request-Id')
         print(x_request_id)
-
